@@ -1,0 +1,117 @@
+Mickys-Mac-Pro:dust-contracts micky$ npx hardhat run scripts/DustForPunksAllocator/deploy.ts --network rinkeby
+loading envFile: .env
+No need to generate any newer typings.
+loading envFile: .env
+┌────────────────────────────────────────┬──────────────────────────────────────────────────┐
+│ Configuration Name                     │ Value                                            │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ EC ERC721 contract                     │ 0xAAD4475343f5150E33d6194270f04e7e5968A2f8       │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token name                             │ DUST Token                                       │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token Symbol                           │ DUST                                             │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token decimals                         │ 18                                               │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token Supply Owner                     │ 0xc954b16623C04a3d3fBee003D253b313C6B79c53       │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token max_supply                       │ 5000000000.0                                     │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Contract Name:                         │ Dust For Punks Allocation                        │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Contract Supply:                       │ 27000000.0                                       │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Allocation Contract Owner              │ 0xB0C4C05e291A558cA0e5D43D43eacAc190aEa9Eb       │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token Allocation for 1 OG              │ 100000.0                                         │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token Allocation for 1 Alpha           │ 10000.0                                          │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token Allocation for 1 Founder         │ 1000.0                                           │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Supply for Founder                     │ 9000000.0                                        │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Supply for Alpha                       │ 9000000.0                                        │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Supply for OG                          │ 9000000.0                                        │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Total Supply Requierd                  │ 27000000.0                                       │
+└────────────────────────────────────────┴──────────────────────────────────────────────────┘
+    Deployer                    0xd25F03bdC4727B43bf09Ace9CF25C5DEA21D1532
+ #1 Deployment - DustToken
+    Deployment hash:            0xe6b7558e2a8b61b8133b11b16225570630620fcd19469af2e2f511746bf1bc4e
+    Deployment address:         0xB52ed9ee9Ee4FD18fd04b2e6d6665629E6F37AB0
+    gasCost:                    3137293
+ #2 Deployment - DustToken
+    Deployment hash:            0xb1b6ce25de195be6cb7bb973beed5497f3a50c88a298e48d31fca45f4a2d598c
+    Deployment address:         0xC8fBC787C6b722C1f17AF01dB4e94fC81Ea45C70
+    gasCost:                    1689846
+ #3 TXN - Transfer supply to DustForPunksAllocator contract
+ #4 TXN - Transfer supply to supplyOwner
+ #5 TXN - Transfer ownership of DustForPunksAllocator to contractOwner
+    Total gasCost:              5172728
+    Deployment gasCost in wei:  5172728
+    Deployment gasPrice:        100 GWEI
+    Deployment wei * price:     0.5172728 ETH
+
+    Validate:
+npx hardhat verify --network mainnet --contract contracts/DustToken.sol:DustToken 0xB52ed9ee9Ee4FD18fd04b2e6d6665629E6F37AB0 "DUST Token" "DUST" "[]" "5000000000000000000000000000"
+
+    Validate:
+npx hardhat verify --network mainnet --contract contracts/DustForPunksAllocator.sol:DustForPunksAllocator 0xC8fBC787C6b722C1f17AF01dB4e94fC81Ea45C70 "0xAAD4475343f5150E33d6194270f04e7e5968A2f8" "0xB52ed9ee9Ee4FD18fd04b2e6d6665629E6F37AB0"
+    Validation:
+┌────────────────────────────────────────┬──────────────────────────────────────────────────┐
+│ Configuration Name                     │ Value                                            │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token Supply Owner Address:            │ 0xc954b16623C04a3d3fBee003D253b313C6B79c53       │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Token Supply Owner Balance:            │ 4973000000.0                                     │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Allocation Contract Owner:             │ 0xB0C4C05e291A558cA0e5D43D43eacAc190aEa9Eb       │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Allocation Contract Balance:           │ 27000000.0                                       │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Unlock Time unix timestamp:            │ 1633352400                                       │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Unlock Time UTC / GMT:                 │ 10/4/2021, 13:00:00                              │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Unlock Time EST:                       │ 10/4/2021, 08:00:00                              │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Unlock Time Europe/Bucharest:          │ 10/4/2021, 16:00:00                              │
+├────────────────────────────────────────┼──────────────────────────────────────────────────┤
+│ Unlock Time Asia/Singapore:            │ 10/4/2021, 21:00:00                              │
+└────────────────────────────────────────┴──────────────────────────────────────────────────┘
+Mickys-Mac-Pro:dust-contracts micky$ npx hardhat verify --network rinkeby --contract contracts/DustToken.sol:DustToken 0xB52ed9ee9Ee4FD18fd04b2e6d6665629E6F37AB0 "DUST Token" "DUST" "[]" "5000000000000000000000000000"
+loading envFile: .env
+Nothing to compile
+No need to generate any newer typings.
+Compiling 1 file with 0.7.5
+@openzeppelin/contracts/access/Ownable.sol:26:5: Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
+    constructor () internal {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+contracts/openzeppelin/ERC777.sol:69:5: Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
+    constructor(
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+Successfully submitted source code for contract
+contracts/DustToken.sol:DustToken at 0xB52ed9ee9Ee4FD18fd04b2e6d6665629E6F37AB0
+for verification on Etherscan. Waiting for verification result...
+
+Successfully verified contract DustToken on Etherscan.
+https://rinkeby.etherscan.io/address/0xB52ed9ee9Ee4FD18fd04b2e6d6665629E6F37AB0#code
+Mickys-Mac-Pro:dust-contracts micky$ npx hardhat verify --network rinkeby --contract contracts/DustForPunksAllocator.sol:DustForPunksAllocator 0xC8fBC787C6b722C1f17AF01dB4e94fC81Ea45C70 "0xAAD4475343f5150E33d6194270f04e7e5968A2f8" "0xB52ed9ee9Ee4FD18fd04b2e6d6665629E6F37AB0"
+loading envFile: .env
+Nothing to compile
+No need to generate any newer typings.
+Compiling 1 file with 0.7.5
+@openzeppelin/contracts/access/Ownable.sol:26:5: Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
+    constructor () internal {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+Successfully submitted source code for contract
+contracts/DustForPunksAllocator.sol:DustForPunksAllocator at 0xC8fBC787C6b722C1f17AF01dB4e94fC81Ea45C70
+for verification on Etherscan. Waiting for verification result...
+
+Successfully verified contract DustForPunksAllocator on Etherscan.
+https://rinkeby.etherscan.io/address/0xC8fBC787C6b722C1f17AF01dB4e94fC81Ea45C70#code
